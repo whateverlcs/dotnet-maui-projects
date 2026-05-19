@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="AppJogoForca.MainPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  BackgroundColor="#E6E6E6"
+>
+  <ScrollView>
+    <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
+      <Button
+        Margin="0,10,0,0"
+        Clicked="OnButtonClickedResetGame"
+        HorizontalOptions="Center"
+        Text="Reiniciar"
+      />
+
+      <Image
+        x:Name="ImgMain"
+        Margin="0,20,0,0"
+        Aspect="AspectFit"
+        HeightRequest="185"
+        Source="forca1.png"
+      />
+
+      <Label x:Name="lblTips" FontSize="32" HorizontalOptions="Center" Text="" />
+
+      <Label
+        x:Name="lblText"
+        CharacterSpacing="5"
+        FontSize="36"
+        HorizontalOptions="Center"
+        Text=""
+      />
+
+      <VerticalStackLayout x:Name="KeyboardContainer" Spacing="3">
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="3">
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="Q" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="W" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="E" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="R" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="T" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="Y" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="U" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="I" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="O" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="P" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout HorizontalOptions="Center" Spacing="3">
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="A" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="S" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="D" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="F" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="G" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="H" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="J" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="K" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="L" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="Ç" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout Margin="0,0,0,10" HorizontalOptions="Center" Spacing="3">
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="Z" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="X" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="C" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="V" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="B" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="N" />
+
+          <Button Clicked="OnButtonClicked" HorizontalOptions="Fill" Text="M" />
+        </HorizontalStackLayout>
+      </VerticalStackLayout>
+    </FlexLayout>
+  </ScrollView>
+</ContentPage>

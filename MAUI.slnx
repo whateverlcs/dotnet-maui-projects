@@ -1,3 +1,8 @@
 <Solution>
-  <Project Path="AppNumeroDaSorte/AppNumeroDaSorte.csproj" />
+  <Project Path="AppJogoForca/AppJogoForca.csproj" Id="b4d05d55-8a3c-4b70-b49a-9b1c5596a68a">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="AppNumeroDaSorte/AppNumeroDaSorte.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
