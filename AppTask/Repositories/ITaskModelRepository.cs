@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using AppTask.Models;
+
+namespace AppTask.Repositories;
+
+public interface ITaskModelRepository
+{
+    IList<TaskModel> GetAll();
+    TaskModel GetById(int id);
+    void Add(TaskModel task);
+    void Update(TaskModel task);
+    void Delete(TaskModel task);
+}

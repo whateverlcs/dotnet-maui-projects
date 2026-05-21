@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="AppTask.Views.AddEditTaskPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:converter="clr-namespace:AppTask.Libraries.Converters"
+  Title="AddEditTaskPage"
+  BackgroundColor="#f7f7f7"
+>
+  <ContentPage.Resources>
+    <converter:BoolToTextDecorationStrikeThroughConverter x:Key="BoolToTextDecorationStrikeThroughConverter" />
+  </ContentPage.Resources>
+  <ScrollView>
+    <Grid>
+      <BoxView HeightRequest="5" VerticalOptions="Start" Color="{StaticResource Black}" />
+
+      <VerticalStackLayout Padding="15" Spacing="10">
+        <Button
+          Padding="0"
+          Clicked="CloseModal"
+          HorizontalOptions="End"
+          MinimumHeightRequest="31"
+          MinimumWidthRequest="31"
+          Text="X"
+        />
+        <Border StrokeShape="RoundRectangle 10">
+          <Entry x:Name="Entry_TaskName" Placeholder="Tarefa" />
+        </Border>
+        <Label
+          x:Name="Label_TaskName_Required"
+          Margin="0,-7,0,5"
+          IsVisible="False"
+          Text="O campo é obrigatório!"
+          TextColor="Red"
+        />
+        <Border StrokeShape="RoundRectangle 10">
+          <Editor x:Name="Editor_TaskDescription" HeightRequest="150" Placeholder="Descrição" />
+        </Border>
+        <Label
+          x:Name="Label_TaskDescription_Required"
+          Margin="0,-7,0,5"
+          IsVisible="False"
+          Text="O campo é obrigatório!"
+          TextColor="Red"
+        />
+        <Border StrokeShape="RoundRectangle 10">
+          <DatePicker x:Name="DatePicker_TaskDate" HorizontalOptions="Fill" />
+        </Border>
+
+        <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto">
+          <Label Text="Etapas (Subtarefas)" VerticalOptions="Center" />
+          <Button
+            Grid.Column="1"
+            Padding="0"
+            Clicked="AddStep"
+            HorizontalOptions="End"
+            MinimumHeightRequest="31"
+            MinimumWidthRequest="31"
+            Text="+"
+          />
+        </Grid>
+
+        <StackLayout x:Name="BindableLayout_Steps">
+          <BindableLayout.ItemTemplate>
+            <DataTemplate>
+              <Grid ColumnDefinitions="30, *, 30">
+                <CheckBox IsChecked="{Binding IsCompleted}" Color="#404040" />
+                <Label
+                  Grid.Column="1"
+                  Text="{Binding Name}"
+                  TextDecorations="{Binding IsCompleted, Converter={StaticResource BoolToTextDecorationStrikeThroughConverter}}"
+                  VerticalOptions="Center"
+                />
+                <Image Grid.Column="2" Source="trash.png" WidthRequest="25">
+                  <Image.GestureRecognizers>
+                    <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="OnTapToDelete" />
+                  </Image.GestureRecognizers>
+                </Image>
+              </Grid>
+            </DataTemplate>
+          </BindableLayout.ItemTemplate>
+        </StackLayout>
+      </VerticalStackLayout>
+      <Button
+        Margin="15"
+        Clicked="SaveData"
+        HorizontalOptions="Center"
+        Text="Salvar"
+        VerticalOptions="End"
+      />
+    </Grid>
+  </ScrollView>
+</ContentPage>

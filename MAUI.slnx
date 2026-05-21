@@ -5,4 +5,10 @@
   <Project Path="AppNumeroDaSorte/AppNumeroDaSorte.csproj">
     <Deploy Solution="Debug|*" />
   </Project>
+  <Project Path="AppTask.Database.Migration.Runtime/AppTask.Database.Migration.Runtime.csproj" Id="41d93c8c-c301-4d3f-9be7-12e1f2cd27d8" />
+  <Project Path="AppTask.Database/AppTask.Database.csproj" Id="35b09fe3-c985-4a42-88e7-8e2a45af8b4a" />
+  <Project Path="AppTask.Models/AppTask.Models.csproj" Id="34c7f9cb-a054-4e5b-a2ea-6689a69c9b85" />
+  <Project Path="AppTask/AppTask.csproj" Id="2aa24c44-f889-4634-803f-40ab12cda427">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
